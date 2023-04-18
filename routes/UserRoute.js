@@ -10,6 +10,9 @@ const userRouter = Router();
 userRouter.post("/register", async (req, res) => {
 	try {
 		const userExist = await User.findOne({ email: req.body.email });
+		console.log('====================================');
+		console.log(userExist);
+		console.log('====================================');
 		if (userExist) {
 			return res
 				.status(200)
